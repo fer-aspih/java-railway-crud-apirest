@@ -4,8 +4,8 @@ COPY . /app
 WORKDIR /app
 
 RUN chmod +x mvnw
-RUN ./mvnw clean package -DskipTests
-RUN mv target/*.jar app.jar
+RUN ./mvnw package -DskipTests
+RUN mv -f target/*.jar app.jar
 
 FROM eclipse-temurin:21-jre
 
